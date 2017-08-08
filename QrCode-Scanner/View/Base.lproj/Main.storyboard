@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13168.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13147.4"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--ScannerViewController-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" userLabel="ScannerViewController" customClass="ScannerViewController" customModule="QrCode_Scanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Put a QrCode or BarCode in front of your camera" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHX-zJ-Qa4">
+                                <rect key="frame" x="15" y="626" width="344" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.5304606541450777" green="0.5304606541450777" blue="0.5304606541450777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="infoLbl" destination="nHX-zJ-Qa4" id="gPw-qU-GD3"/>
+                        <segue destination="1nt-PY-Qp5" kind="show" identifier="seg1" id="47e-Hz-7Lh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="276" y="13"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="N7s-BC-wlg">
+            <objects>
+                <viewController storyboardIdentifier="DetailsViewController" id="1nt-PY-Qp5" customClass="DetailsViewController" customModule="QrCode_Scanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lb5-2D-smH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mx6-Uf-2hf">
+                                <rect key="frame" x="-144" y="424" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gV3-uc-ylE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9j-D2-gKJ">
+                                <rect key="frame" x="0.0" y="621" width="375" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="5DU-IW-dSa"/>
+                                    <constraint firstAttribute="width" constant="375" id="6Up-6e-OfC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="21"/>
+                                <state key="normal" title="Back to scanner" backgroundImage="Attachment White-Background-Wallpapers-HD">
+                                    <color key="titleColor" red="0.26139647308233144" green="0.26163592226568638" blue="0.92199643782383423" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="x6f-b0-NJ8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="h9j-D2-gKJ" firstAttribute="trailing" secondItem="pfK-zC-SYf" secondAttribute="trailing" id="Avz-Un-YFg"/>
+                            <constraint firstItem="gV3-uc-ylE" firstAttribute="top" secondItem="lb5-2D-smH" secondAttribute="top" id="Jej-Pe-JiM"/>
+                            <constraint firstItem="gV3-uc-ylE" firstAttribute="leading" secondItem="pfK-zC-SYf" secondAttribute="leading" id="PD8-6f-iMg"/>
+                            <constraint firstItem="gV3-uc-ylE" firstAttribute="trailing" secondItem="pfK-zC-SYf" secondAttribute="trailing" id="Rla-Uh-EYh"/>
+                            <constraint firstItem="gV3-uc-ylE" firstAttribute="bottom" secondItem="pfK-zC-SYf" secondAttribute="bottom" id="Rqx-0J-zgk"/>
+                            <constraint firstItem="h9j-D2-gKJ" firstAttribute="leading" secondItem="pfK-zC-SYf" secondAttribute="leading" id="WSw-Jk-xQS"/>
+                            <constraint firstItem="h9j-D2-gKJ" firstAttribute="bottom" secondItem="pfK-zC-SYf" secondAttribute="bottom" id="iua-dA-aeO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pfK-zC-SYf"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="gV3-uc-ylE" id="VQD-1k-bf0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="evn-0G-OgY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1500" y="105.69715142428787"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Attachment White-Background-Wallpapers-HD" width="1920" height="1080"/>
+    </resources>
+</document>
